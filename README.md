@@ -1,59 +1,53 @@
-# CodeIgniter 4 Framework
+# Sistema de Inicio de Sesión con CodeIgniter
 
-## What is CodeIgniter?
+Este proyecto es un simple sistema de inicio de sesión desarrollado utilizando el framework PHP CodeIgniter. Proporciona una base sólida para la autenticación de usuarios en aplicaciones web.
 
-CodeIgniter is a PHP full-stack web framework that is light, fast, flexible and secure.
-More information can be found at the [official site](https://codeigniter.com).
+## Requisitos del Sistema
 
-This repository holds the distributable version of the framework.
-It has been built from the
-[development repository](https://github.com/codeigniter4/CodeIgniter4).
+- PHP >= 7.2
+- CodeIgniter >= 4.x
+- MySQL 
 
-More information about the plans for version 4 can be found in [CodeIgniter 4](https://forum.codeigniter.com/forumdisplay.php?fid=28) on the forums.
+## Instalación
 
-The user guide corresponding to the latest version of the framework can be found
-[here](https://codeigniter4.github.io/userguide/).
+1. Clone el repositorio en su máquina local:
 
-## Important Change with index.php
+    ```bash
+    git clone https://github.com/fmontenegro0510/c4-login.git
+    ```
 
-`index.php` is no longer in the root of the project! It has been moved inside the *public* folder,
-for better security and separation of components.
+2. Configure la base de datos en `application/config/database.php` con los detalles de su base de datos.
 
-This means that you should configure your web server to "point" to your project's *public* folder, and
-not to the project root. A better practice would be to configure a virtual host to point there. A poor practice would be to point your web server to the project root and expect to enter *public/...*, as the rest of your logic and the
-framework are exposed.
+3. Ejecute el script SQL ubicado en `sql/database.sql` en su base de datos para crear la tabla de usuarios.
 
-**Please** read the user guide for a better explanation of how CI4 works!
+4. Inicie el servidor de desarrollo de CodeIgniter:
 
-## Repository Management
+    ```bash
+    php -S localhost:8080 -t public
+    ```
 
-We use GitHub issues, in our main repository, to track **BUGS** and to track approved **DEVELOPMENT** work packages.
-We use our [forum](http://forum.codeigniter.com) to provide SUPPORT and to discuss
-FEATURE REQUESTS.
+5. Abra su navegador y vaya a [http://localhost:8080](http://localhost:8080).
 
-This repository is a "distribution" one, built by our release preparation script.
-Problems with it can be raised on our forum, or as issues in the main repository.
+## Estructura del Proyecto
 
-## Contributing
+- `application/`: Contiene el código fuente de la aplicación CodeIgniter.
+  - `config/`: Configuraciones de la aplicación.
+  - `controllers/`: Controladores de la aplicación.
+  - `models/`: Modelos para interactuar con la base de datos.
+  - `views/`: Vistas HTML de la aplicación.
+- `public/`: Archivos públicos accesibles desde el navegador.
+- `sql/`: Scripts SQL para la creación de la base de datos.
 
-We welcome contributions from the community.
+## Funcionalidades
 
-Please read the [*Contributing to CodeIgniter*](https://github.com/codeigniter4/CodeIgniter4/blob/develop/CONTRIBUTING.md) section in the development repository.
+- **Inicio de Sesión Seguro**: Implementación segura de inicio de sesión con hashes de contraseñas.
+- **Registro de Usuarios**: Posibilidad de registrar nuevos usuarios.
+- **Cerrar Sesión**: Funcionalidad para cerrar sesión de manera segura.
 
-## Server Requirements
+## Contribuir
 
-PHP version 7.4 or higher is required, with the following extensions installed:
+¡Siéntase libre de contribuir! Puede abrir problemas (issues) o enviar solicitudes de extracción (pull requests).
 
-- [intl](http://php.net/manual/en/intl.requirements.php)
-- [mbstring](http://php.net/manual/en/mbstring.installation.php)
+## Licencia
 
-> **Warning**
-> The end of life date for PHP 7.4 was November 28, 2022. If you are
-> still using PHP 7.4, you should upgrade immediately. The end of life date
-> for PHP 8.0 will be November 26, 2023.
-
-Additionally, make sure that the following extensions are enabled in your PHP:
-
-- json (enabled by default - don't turn it off)
-- [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
-- [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+Este proyecto está bajo la licencia [MIT](LICENSE).
